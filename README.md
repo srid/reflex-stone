@@ -27,7 +27,7 @@ nix-shell --run 'ghcid -T :main'
 Build JS using GHCJS:
 
 ```bash
-nix-build site.nix
+nix-build
 open ./result/index.html
 ```
 

@@ -1,1 +1,1 @@
-(import ./. {}).shells.ghc
+(import ./project.nix {}).shells.ghc

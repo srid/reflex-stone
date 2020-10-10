@@ -28,7 +28,7 @@ bodyWidget = do
   elClass "p" "result" $ do
     dyn_ $
       ffor cnt $ \case
-        0 -> text "Go ahead and hit the stone."
+        0 -> text "Go ahead and hit the stone"
         n -> do
           text $ T.pack (show n)
           text " heads!"
