@@ -16,6 +16,11 @@ main =
           n -> do
             text $ T.pack (show n)
             text " heads!"
+    divClass "footer" $ do
+      elAttr "a" ("href" =: homePage) $
+        text "View source on GitHub"
+  where
+    homePage = "https://github.com/srid/reflex-stone"
 
 stoneButton :: DomBuilder t m => m (Event t ())
 stoneButton = do
