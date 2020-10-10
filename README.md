@@ -20,7 +20,8 @@ nix-shell --run 'ghcid -T :main'
 Build JS using GHCJS:
 
 ```bash
-nix-build -A ghcjs.reflex-stone
+nix-build site.nix
+open ./result/index.html
 ```
 
 ## Credits
