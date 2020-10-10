@@ -17,11 +17,9 @@ jobs:
             binary-cache-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=
             binary-caches-parallel-connections = 40
             sandbox = true
-      - name: Download from reflex-frp cache
-        run: nix-build shell.nix --no-out-link
-      - name: Build 🔧
+      - name: Download & Build 🔧
         run: |
-          nix-build site.nix
+          nix-build -j4 site.nix
       - name: Deploy to gh-pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:

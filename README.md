@@ -8,6 +8,9 @@ Like [Obelisk](https://github.com/obsidiansystems/obelisk), but for static sites
 
 - Quick-feedback driven development cycle using ghcid and ghc
 - IDE support (Open VSCode and install the suggested extensions)
+- GitHub Actions CI & GitHub Pages static site deployment ([view site][pages])
+
+[pages]: http://srid.github.io/reflex-stone/
 
 ## Prerequisites
 
