@@ -9,16 +9,28 @@ build-type:         Simple
 extra-source-files: README.md
 
 executable reflex-stone
-  hs-source-dirs:   src
-  main-is:          Main.hs
+  hs-source-dirs:     src
+  main-is:            Main.hs
   build-depends:
       base
     , reflex
     , reflex-dom
-  ghc-options: -Wall -threaded
-  if impl(ghcjs)
+    , text
+
+  default-extensions:
+    DataKinds
+    FlexibleContexts
+    LambdaCase
+    OverloadedStrings
+    ScopedTypeVariables
+
+  ghc-options:        -Wall -threaded
+
+  if impl(ghcjs -any)
     ghc-options: -dedupe
     cpp-options: -DGHCJS_BROWSER
-  default-language: Haskell2010
-  if os(darwin)
+
+  default-language:   Haskell2010
+
+  if os(osx)
     ghc-options: -dynamic
