@@ -19,7 +19,7 @@ jobs:
             sandbox = true
       - name: Download & Build 🔧
         run: |
-          nix-build -j4 site.nix
+          nix-build -j4
       - name: Deploy to gh-pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
