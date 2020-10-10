@@ -6,6 +6,7 @@ Like [Obelisk](https://github.com/obsidiansystems/obelisk), but for static sites
 
 ## Features
 
+- Quick-feedback driven development cycle using ghcid and ghc
 - IDE support (Open VSCode and install the suggested extensions)
 
 ## Development
@@ -13,7 +14,7 @@ Like [Obelisk](https://github.com/obsidiansystems/obelisk), but for static sites
 Running locally using GHC:
 
 ```bash
-nix-shell --run 'ghcid -T :main
+nix-shell --run 'ghcid -T :main'
 ```
 
 Build JS using GHCJS:
