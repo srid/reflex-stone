@@ -2,13 +2,9 @@
 }:
 let 
   name = "reflex-stone";
-  sources = import ./nix/sources.nix;
-  rp = import sources.reflex-platform { 
-    inherit system;
-  };
-  project = import ./project.nix { inherit system; };
-  pkgs = rp.nixpkgs;
-  app = pkgs.lib.getAttr name project.ghcjs;
+  p = import ./project.nix { inherit system; };
+  pkgs = p.reflexPlatform.nixpkgs;
+  app = pkgs.lib.getAttr name p.project.ghcjs;
   wwwDir = ./www;
 in 
   pkgs.runCommand "${name}-site" {} ''

@@ -31,13 +31,8 @@ nix-build
 open ./result/index.html
 ```
 
-## Tracking reflex-platform
-
-We use `niv` to track dependencies including reflex-platform. Note that reflex-platform is pinned to [PR #666] which is the release condidate for the next version.
-
 ## Credits
 
 Original inspiration is [this blog post](https://vaibhavsagar.com/blog/2019/10/29/getting-along-with-javascript/).
 
 [cache]: https://github.com/obsidiansystems/obelisk#installing-obelisk
-[PR #666]: https://github.com/reflex-frp/reflex-platform/pull/666
