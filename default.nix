@@ -5,11 +5,20 @@ let
   p = import ./project.nix { inherit system; };
   pkgs = p.reflexPlatform.nixpkgs;
   app = pkgs.lib.getAttr name p.project.ghcjs;
-  wwwDir = ./www;
+  indexHtml = pkgs.writeText "index.html"
+    ''
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <script language="javascript" src="all.js"></script>
+    </head>
+    <body></body>
+    </html>
+    '';
 in 
   pkgs.runCommand "${name}-site" {} ''
     mkdir -p $out
-    cp ${wwwDir}/index.html $out/
+    cp ${indexHtml} $out/index.html
     # The original all.js is pretty huge; so let's run it by the closure
     # compiler.    
     # cp ${app}/bin/${name}.jsexe/all.js $out/
