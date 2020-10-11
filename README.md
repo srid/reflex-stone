@@ -18,10 +18,12 @@ Unless you enjoy compiling for hours at end, you should use the reflex-platform 
 
 ## Development
 
-Running locally using GHC:
+Running locally using GHC and jsaddle-warp:
 
 ```bash
 nix-shell --run 'ghcid -T :main'
+# Or, to run with a custom port
+nix-shell --run 'JSADDLE_WARP_PORT=8080 ghcid -T :main'
 ```
 
 Build JS using GHCJS:
@@ -33,6 +35,6 @@ open ./result/index.html
 
 ## Credits
 
-Original inspiration is [this blog post](https://vaibhavsagar.com/blog/2019/10/29/getting-along-with-javascript/).
+Initial inspiration came from [this blog post](https://vaibhavsagar.com/blog/2019/10/29/getting-along-with-javascript/).
 
 [cache]: https://github.com/obsidiansystems/obelisk#installing-obelisk
