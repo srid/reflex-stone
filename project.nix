@@ -8,11 +8,7 @@ let
   inherit (import (gitignoreSrc) { }) gitignoreSource;
   reflexPlatformSrc = builtins.fetchGit { 
     url = "https://github.com/reflex-frp/reflex-platform.git";
-    # Note that reflex-platform is pinned to [PR #666] which is the release
-    # condidate for the next version.
-    # [PR #666]: https://github.com/reflex-frp/reflex-platform/pull/666
-    ref = "rc/0.6.0.0";
-    rev = "b14992ae74cac755f0e972569434c71ad35489eb";
+    rev = "8d421e9e06b0477cbc065346aaf596c9db6cc387";
   };
   reflexPlatform = import reflexPlatformSrc { 
     inherit system;
