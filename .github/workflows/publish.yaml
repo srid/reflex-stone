@@ -1,12 +1,12 @@
-name: "Publish"
+name: "Build & publish"
 on:
-  # Run only when pushing to master branch
   push:
-    branches:
-      - master
+  pull_request:
 jobs:
   neuron:
     runs-on: ubuntu-latest
+    env:
+      MAINLINE: refs/heads/master
     steps:
       - uses: actions/checkout@v2
       - uses: cachix/install-nix-action@v11
@@ -22,6 +22,7 @@ jobs:
           nix-build -j4
       - name: Deploy to gh-pages 🚀
         uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == env.MAINLINE }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./result/
