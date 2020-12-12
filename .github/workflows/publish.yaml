@@ -1,8 +1,7 @@
 name: "Build & publish"
 on:
   push:
-    branches:
-      - master
+  pull_request:
 jobs:
   neuron:
     runs-on: ubuntu-latest
