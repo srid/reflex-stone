@@ -26,11 +26,20 @@ nix-shell --run 'ghcid -T :main'
 nix-shell --run 'JSADDLE_WARP_PORT=8080 ghcid -T :main'
 ```
 
+## Compiling 
+
 Build JS using GHCJS:
 
 ```bash
 nix-build
 open ./result/index.html
+```
+
+Build GTK+ desktop version 
+
+```bash
+nix-build 
+./result/bin/ka
 ```
 
 ## Credits

@@ -1,4 +1,5 @@
 { system ? builtins.currentSystem
+, useWarp ? false
 }:
 let 
   gitignoreSrc = builtins.fetchTarball {
@@ -14,7 +15,7 @@ let
     inherit system;
   };
   project = reflexPlatform.project ({pkgs, ...}: {
-    useWarp = true;
+    inherit useWarp;
     withHoogle = false;
     packages = {
       reflex-stone = pkgs.lib.cleanSource (gitignoreSource ./.);
