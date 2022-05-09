@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
 jobs:
-  neuron:
+  publish:
     runs-on: ubuntu-latest
     env:
       MAINLINE: refs/heads/master
